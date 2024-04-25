@@ -3,9 +3,9 @@ package main
 import "fmt"
 
 func main() {
-	//rr := titleToNumber("ZB")
-	//fmt.Println(rr)
-	ff := reverseStr("abcdefg", 2)
+	rr := titleToNumber("ZB")
+	fmt.Println(rr)
+	ff := reverseStr("abcdefg")
 	fmt.Println(ff)
 }
 
@@ -20,11 +20,13 @@ func titleToNumber(columnTitle string) int {
 	return result
 }
 
-func reverseStr(s string, k int) string {
+func reverseStr(s string) string {
 	sbyte := []rune(s)
-	first, last := 0, k
+	first, last := 0, len(sbyte)-1
 	for first <= last {
-		k[first], k[last] = k[last], k[first]
+		sbyte[first], sbyte[last] = sbyte[last], sbyte[first]
+		first++
+		last--
 	}
 	return string(sbyte)
 }
