@@ -10,8 +10,6 @@ func main() {
 	c <- 42 // send value to channel c
 	c <- 43
 
-	fmt.Println(<-c)
-	fmt.Println(<-c)
 	fmt.Println("----------")
 	fmt.Printf("%T\n", c)
 
